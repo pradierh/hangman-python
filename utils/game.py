@@ -5,6 +5,7 @@ class Hangman:
     word_to_find = ""
     hidden_word = []
     lives = 5
+    letter = ''
     number_of_words = 0
     correctly_guessed_letters = []
     wrongly_guessed_letters = []
@@ -30,19 +31,21 @@ class Hangman:
         print(f"Number of lives remaining --> {cls.lives}.")
         print(f"Error Count --> {cls.error_count}.")
         print(f"Turn Count --> {cls.turn_count}.")
-        
 
+    def game_over():
+        print("GAME OVER ...")
+
+    def well_played(cls):
+        print(f"You found the word: {cls.word_to_find} in {cls.turn_count} turn with {cls.error_count} errors!")
+
+    def check_letter(cls):
+        if len(cls.letter) != 1:
+            print("Please, insert only one character")
+            return 1
+#    def check_end_of_game(cls):
+#        if c
 
     def play(cls):
         while (cls.lives) != 0:
-            letter = input("Please enter a letter: ")
+            cls.letter = input("Please enter a letter: ")
             cls.print_my_round()
-            
-    
-
-
-    """
-    def game_over():
-
-    def well_played():
-"""
